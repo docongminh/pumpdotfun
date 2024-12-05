@@ -1,0 +1,27 @@
+[package]
+name = "pumpdotfun"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "pumpdotfun"
+
+[features]
+default = []
+devnet = []
+
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+
+[dependencies]
+anchor-lang = { version = "0.30.0", features = ["event-cpi"] }
+anchor-spl = { version = "0.30.0", features = ["memo"] }
+spl-transfer-hook-interface = "0.5.0"
+bytemuck = { version = "1.13.1", features = ["derive", "min_const_generics"] }
+static_assertions = "1.1.0"
+num_enum = "0.7.1"
